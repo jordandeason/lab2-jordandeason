@@ -296,7 +296,7 @@ function generateRandomLoc(n)
           return Math.floor((Math.random() * 450) + 15);
     }
     else {
-          return Math.floor((Math.random() * 345) + 342);
+          return Math.floor((Math.random() * 150) + 342);
     }
 }
 /*

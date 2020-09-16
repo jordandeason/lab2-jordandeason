@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="First commit" />
+    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="Updated code">
+      <change beforePath="$PROJECT_DIR$/IncredibleTriangle.js" beforeDir="false" afterPath="$PROJECT_DIR$/IncredibleTriangle.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hNHC1TxQaEgqOjGdomHvUyElQd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,7 +76,7 @@
       <workItem from="1600219713272" duration="15000" />
       <workItem from="1600220796987" duration="56000" />
       <workItem from="1600226040639" duration="3000" />
-      <workItem from="1600264493982" duration="7024000" />
+      <workItem from="1600264493982" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1600103093292</created>
@@ -82,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600103093292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated code">
+      <created>1600279078628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600279078629</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,12 +112,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Updated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated code" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="218" y="174" key="Vcs.Push.Dialog.v2" timestamp="1600103099070">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="534" y="325" key="Github.ShareDialog" timestamp="1600279118072">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state x="534" y="325" key="Github.ShareDialog/0.23.1440.797@0.23.1440.797" timestamp="1600279118072" />
+    <state x="218" y="169" key="Vcs.Push.Dialog.v2" timestamp="1600279098423">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="218" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1600279098423" />
     <state x="218" y="174" key="Vcs.Push.Dialog.v2/0.23.1440.822@0.23.1440.822" timestamp="1600103099070" />
   </component>
 </project>
