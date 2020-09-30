@@ -37,7 +37,7 @@ STARTUP:  Vertex Shader <br>
     void
     main()
     {
-    if(abs(vType-1.0) < 0.1)
+    if(abs(vType-2.0) < 0.1)
     {
 
     gl_Position =
@@ -46,19 +46,21 @@ STARTUP:  Vertex Shader <br>
          0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0,
          sin(theta), 0.0, 0.0, 1.0) *
-    mat4( -(sin(theta)), cos(theta), 0.0, 0.0,
-           cos(theta), sin(theta), 0.0, 0.0,
-           0.0,        0.0,        1.0, 0.0,
-           0.0,        0.0,        0.0, 1.0) *
+    //mat4( -(sin(theta)), cos(theta), 0.0, 0.0,
+           //cos(theta), sin(theta), 0.0, 0.0,
+           //0.0,        0.0,        1.0, 0.0,
+           //0.0,        0.0,        0.0, 1.0) *
             vPosition;
             }
-    //else {
+    else {
 
-    //gl_Position = mat4(1.0, 0.0, 0.0, 0.0,
+    gl_Position =
+    //mat4(1.0, 0.0, 0.0, 0.0,
                        //0.0, 1.0, 0.0, 0.0,
                        //0.0, 0.0, 1.0, 0.0,
-                       //sin(phi), 0.1*cos(phi), 0.75*sin(theta), 1.0) * vPosition;
-    //}
+                       //sin(phi), 0.1*cos(phi), 0.75*sin(theta), 1.0) *
+                       vPosition;
+    }
      fColor = vColor;
     }
 </script>

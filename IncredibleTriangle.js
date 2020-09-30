@@ -39,7 +39,7 @@ var colorPalette = [
 
 //boat info
 var theta = 0.0;
-var deltatheta = 0.0;
+var deltatheta = 0.01;
 var thetaLoc;
 var triangleOneON = true;
 
@@ -191,18 +191,18 @@ window.onload = function init() {
         //boatX = generateRandomLoc(1);
         //boatY = generateRandomLoc(0);
 
-        boatX = 410;
+        boatX = 225;
         boatY = 430;
 
-        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1), 1.0);
-        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0), 1.0);
-        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0), 1.0);
+        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1), 2.0);
+        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0), 2.0);
+        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0), 2.0);
         col = flagColor();
         if (col == 1) {
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0), 1.0);
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0), 2.0);
         }
         else{
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0), 1.0);
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0), 2.0);
         }
         //alert("synthetic image made");
 
@@ -271,16 +271,16 @@ function render() {
 
 
 
-    if (triangleOneON){
-        theta = IncrementClampRadians(theta, deltatheta);
-    }
+
+    theta = IncrementClampRadians(theta, deltatheta);
+
 
     gl.uniform1f(thetaLoc,theta);
 
 
 
 
-    // render the 168 points and colors as triangles
+    // render the points and colors as triangles
     gl.drawArrays( gl.TRIANGLES, 0,pointsArray.length);
 
     // recursively call render() in the context of the browser

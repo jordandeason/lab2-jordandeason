@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="image shows up, no movement, flipped">
+    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="no movement, flipped">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IncredibleTriangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/IncredibleTriangle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IncredibleTriangle.js" beforeDir="false" afterPath="$PROJECT_DIR$/IncredibleTriangle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +81,8 @@
       <workItem from="1600264493982" duration="7541000" />
       <workItem from="1600361549285" duration="1162000" />
       <workItem from="1601472881919" duration="6860000" />
-      <workItem from="1601483812555" duration="609000" />
+      <workItem from="1601483812555" duration="1411000" />
+      <workItem from="1601495372917" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1600103093292</created>
@@ -116,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601484135360</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="no movement, flipped">
+      <created>1601484505036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601484505036</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +150,8 @@
     <MESSAGE value="final code" />
     <MESSAGE value="vertex shader not compiling" />
     <MESSAGE value="image shows up, no movement, flipped" />
-    <option name="LAST_COMMIT_MESSAGE" value="image shows up, no movement, flipped" />
+    <MESSAGE value="no movement, flipped" />
+    <option name="LAST_COMMIT_MESSAGE" value="no movement, flipped" />
   </component>
   <component name="WindowStateProjectService">
     <state x="534" y="325" key="Github.ShareDialog" timestamp="1600279118072">
