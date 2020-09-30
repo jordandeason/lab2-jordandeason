@@ -20,7 +20,7 @@ var colorsArray = [];
 var typesArray = [];
 var index=0;
 
-alert("arrays created");
+//alert("arrays created");
 
 // color palette -- just simplifies some things  (RGBA)
 var colorPalette = [
@@ -35,7 +35,7 @@ var colorPalette = [
     vec4(1,239.0/255,213.0/255,1.0), // papaya whip
     vec4( 0.0, 1.0, 1.0, 1.0)   // cyan
 ];
-alert("colorPalette created");
+//("colorPalette created");
 
 //boat info
 var theta = 0.0;
@@ -60,14 +60,14 @@ window.onload = function init() {
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
-    alert("WebGL available");
+    //alert("WebGL available");
 
     // set up orthgraphic view using the entire canvas, and
     // set the default color of the view as "jordy blue"
     gl.viewport( 0, 0, canvas.width, canvas.height );
-    gl.clearColor(137/255, 196/255, 244/255, 1);
+    gl.clearColor(137/255, 196/255, 244/255, 1.0);
 
-    alert("canvas configured");
+    //alert("canvas configured");
 
 
     //  CONFIGURE GPU SHADERS
@@ -75,12 +75,12 @@ window.onload = function init() {
     //
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
-    alert("shaders compiled and loaded onto GPU");
+    //alert("shaders compiled and loaded onto GPU");
 
     thetaLoc = gl.getUniformLocation(program, "theta");
     //phiLoc = gl.getUniformLocation(program, "phi");
 
-    alert("uniform theta located");
+    //alert("uniform theta located");
 
     //variables for vertices of sky triangles
     var x1 = 255;
@@ -97,10 +97,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 == 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1.0);
         }
         else {
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1.0);
         }
         //move vertices
         y2 = y2 - 12;
@@ -121,10 +121,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 == 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1),1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1),1.0);
         }
         else{
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1.0);
         }
         //move vertices
         y2 = y2 - 12;
@@ -145,10 +145,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 != 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1.0);
         }
         else{
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1.0);
         }
         //move vertices
         x2 = x2 + 15;
@@ -156,12 +156,12 @@ window.onload = function init() {
     }
     //making sun
     //alert("beginning sun");
-    mytriangle(vec2(255,280), vec2(220,336), vec2(290,336), vec4(255/255, 236/255, 139/255, 1), 1);
-    mytriangle(vec2(255,336), vec2(205,300), vec2(305,300), vec4(255/255, 236/255, 139/255, 1), 1);
-    mytriangle(vec2(250,336), vec2(225,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
-    mytriangle(vec2(260,336), vec2(285,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
-    mytriangle(vec2(260,336), vec2(305,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
-    mytriangle(vec2(260,336), vec2(200,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(255,280), vec2(220,336), vec2(290,336), vec4(255/255, 236/255, 139/255, 1), 1.0);
+    mytriangle(vec2(255,336), vec2(205,300), vec2(305,300), vec4(255/255, 236/255, 139/255, 1), 1.0);
+    mytriangle(vec2(250,336), vec2(225,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1.0);
+    mytriangle(vec2(260,336), vec2(285,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1.0);
+    mytriangle(vec2(260,336), vec2(305,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1.0);
+    mytriangle(vec2(260,336), vec2(200,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1.0);
     //alert("done with sun");
 
 
@@ -177,12 +177,12 @@ window.onload = function init() {
         blue1WaveLocX = generateRandomLoc(1);
         blue1WaveLocY = generateRandomLoc(0);
         //calls createWave function for blue1 waves
-        createWave(vec2(blue1WaveLocX,blue1WaveLocY), vec2(blue1WaveLocX+15,blue1WaveLocY-10), vec2(blue1WaveLocX+30,blue1WaveLocY), vec4(107/255, 185/255, 240/255, 1), 1);
+        createWave(vec2(blue1WaveLocX,blue1WaveLocY), vec2(blue1WaveLocX+15,blue1WaveLocY-10), vec2(blue1WaveLocX+30,blue1WaveLocY), vec4(107/255, 185/255, 240/255, 1), 1.0);
         //calls generate location fnx
         blue2WaveLocX = generateRandomLoc(1);
         blue2WaveLocY = generateRandomLoc(0);
         //calls createWave function for blue2 waves
-        createWave(vec2(blue2WaveLocX,blue2WaveLocY), vec2(blue2WaveLocX+15,blue2WaveLocY-10), vec2(blue2WaveLocX+30,blue2WaveLocY), vec4(162/255, 208/255, 245/255, 1), 1);
+        createWave(vec2(blue2WaveLocX,blue2WaveLocY), vec2(blue2WaveLocX+15,blue2WaveLocY-10), vec2(blue2WaveLocX+30,blue2WaveLocY), vec4(162/255, 208/255, 245/255, 1), 1.0);
     }
 
         var boatX;
@@ -194,15 +194,15 @@ window.onload = function init() {
         boatX = 410;
         boatY = 430;
 
-        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1), 1);
-        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0), 1);
-        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0), 1);
+        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1), 1.0);
+        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0), 1.0);
+        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0), 1.0);
         col = flagColor();
         if (col == 1) {
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0), 1);
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0), 1.0);
         }
         else{
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0), 1);
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0), 1.0);
         }
         //alert("synthetic image made");
 
@@ -240,7 +240,7 @@ window.onload = function init() {
     gl.vertexAttribPointer(vColor, 4, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vColor);
 
-    alert("cBuffer and vColor set up");
+    //alert("cBuffer and vColor set up");
 
 
     typesBuffer = gl.createBuffer();
@@ -251,7 +251,7 @@ window.onload = function init() {
     gl.vertexAttribPointer(vType, 1, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vType);
 
-    alert("cBuffer, vColor, and vType set up");
+    //alert("cBuffer, vColor, and vType set up");
 
 
     // INITIATE RENDERING OF SYNTHETIC IMAGE
