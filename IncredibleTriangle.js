@@ -13,10 +13,14 @@ var canvas;
 var gl;
 var pBuffer;  // position buffer
 var cBuffer;  // color buffer
+var typesBuffer;
 
 var pointsArray = [];
 var colorsArray = [];
+var typesArray = [];
 var index=0;
+
+alert("arrays created");
 
 // color palette -- just simplifies some things  (RGBA)
 var colorPalette = [
@@ -31,7 +35,20 @@ var colorPalette = [
     vec4(1,239.0/255,213.0/255,1.0), // papaya whip
     vec4( 0.0, 1.0, 1.0, 1.0)   // cyan
 ];
+alert("colorPalette created");
 
+//boat info
+var theta = 0.0;
+var delttatheta = 0.0;
+var thetaLoc;
+var triangleOneON = true;
+
+/*//flag info, not sure if necessary yet
+var phi = 0.0;
+var deltaphi = 0.0;
+var phiLoc;
+var triangleTwoON = true;
+*/
 // *****************************
 
 // callback function that starts once html5 window is loaded
@@ -41,16 +58,16 @@ window.onload = function init() {
     // associate canvas with "gl-canvas" and setup
     canvas = document.getElementById( "gl-canvas" );
     gl = WebGLUtils.setupWebGL( canvas );
-    //if ( !gl ) { alert( "WebGL isn't available" ); }
+    if ( !gl ) { alert( "WebGL isn't available" ); }
 
-    //alert("WebGL available");
+    alert("WebGL available");
 
     // set up orthgraphic view using the entire canvas, and
     // set the default color of the view as "jordy blue"
     gl.viewport( 0, 0, canvas.width, canvas.height );
     gl.clearColor(137/255, 196/255, 244/255, 1);
 
-    //alert("canvas configured");
+    alert("canvas configured");
 
 
     //  CONFIGURE GPU SHADERS
@@ -58,7 +75,12 @@ window.onload = function init() {
     //
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
-    //alert("shaders compiled and loaded onto GPU");
+    alert("shaders compiled and loaded onto GPU");
+
+    thetaLoc = gl.getUniformLocation(program, "theta");
+    //phiLoc = gl.getUniformLocation(program, "phi");
+
+    alert("uniform theta located");
 
     //variables for vertices of sky triangles
     var x1 = 255;
@@ -166,8 +188,11 @@ window.onload = function init() {
         var boatX;
         var boatY;
         var col;
-        boatX = generateRandomLoc(1);
-        boatY = generateRandomLoc(0);
+        //boatX = generateRandomLoc(1);
+        //boatY = generateRandomLoc(0);
+
+        boatX = 410;
+        boatY = 430;
 
         makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1));
         makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0));
@@ -215,7 +240,19 @@ window.onload = function init() {
     gl.vertexAttribPointer(vColor, 4, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vColor);
 
-    //alert("cBuffer and vColor set up");
+    alert("cBuffer and vColor set up");
+
+
+    typesBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, typesBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, flatten(typesArray), gl.STATIC_DRAW);
+
+    var vType = gl.getAttribLocation(program, "vType");
+    gl.vertexAttribPointer(vType, 1, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(vType);
+
+    alert("cBuffer, vColor, and vType set up");
+
 
     // INITIATE RENDERING OF SYNTHETIC IMAGE
     // render away
@@ -231,11 +268,32 @@ function render() {
     // clear the working buffer
     gl.clear( gl.COLOR_BUFFER_BIT );
 
+
+
+
+    if (triangleOneON){
+        theta = IncrementClampRadians(theta, deltatheta);
+    }
+
+    gl.uniform1f(thetaLoc,theta);
+
+
+
+
     // render the 168 points and colors as triangles
-    gl.drawArrays( gl.TRIANGLES, 0,663);
+    gl.drawArrays( gl.TRIANGLES, 0,pointsArray.length);
 
     // recursively call render() in the context of the browser
     window.requestAnimFrame(render);
+}
+
+
+function IncrementClampRadians(theta, delta){
+    theta += delta;
+    if (theta >= 2*Math.PI){
+        return theta - 2*Math.PI;
+    }
+    return theta;
 }
 
 // *************************
@@ -252,7 +310,7 @@ function coordscale(coord) {
 
 // CREATE (SINGLE) COLORED TRIANGLE
 // put a triangle into the points and colors arrays
-function mytriangle(aa, bb, cc, cccc)
+function mytriangle(aa, bb, cc, cccc, triangType)
 {
     //alert("inside mytriangle fxn");
 
@@ -266,6 +324,10 @@ function mytriangle(aa, bb, cc, cccc)
     colorsArray.push(cccc);
     colorsArray.push(cccc);
     colorsArray.push(cccc);
+
+    typesArray.push(triangType);
+    typesArray.push(triangType);
+    typesArray.push(triangType);
 
     return;
 
