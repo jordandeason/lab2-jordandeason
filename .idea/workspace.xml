@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="final code">
+    <list default="true" id="78cd8baf-bfd9-48f1-a1d5-88c8da69afcb" name="Default Changelist" comment="vertex shader not compiling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IncredibleTriangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/IncredibleTriangle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IncredibleTriangle.js" beforeDir="false" afterPath="$PROJECT_DIR$/IncredibleTriangle.js" afterDir="false" />
@@ -80,7 +80,8 @@
       <workItem from="1600226040639" duration="3000" />
       <workItem from="1600264493982" duration="7541000" />
       <workItem from="1600361549285" duration="1162000" />
-      <workItem from="1601472881919" duration="4764000" />
+      <workItem from="1601472881919" duration="6860000" />
+      <workItem from="1601483812555" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1600103093292</created>
@@ -103,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600279452319</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="vertex shader not compiling">
+      <created>1601478564725</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601478564725</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,17 +133,18 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Updated code" />
     <MESSAGE value="final code" />
-    <option name="LAST_COMMIT_MESSAGE" value="final code" />
+    <MESSAGE value="vertex shader not compiling" />
+    <option name="LAST_COMMIT_MESSAGE" value="vertex shader not compiling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="534" y="325" key="Github.ShareDialog" timestamp="1600279118072">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="534" y="325" key="Github.ShareDialog/0.23.1440.797@0.23.1440.797" timestamp="1600279118072" />
-    <state x="218" y="169" key="Vcs.Push.Dialog.v2" timestamp="1600279468768">
+    <state x="218" y="169" key="Vcs.Push.Dialog.v2" timestamp="1601478586981">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="218" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1600279468768" />
+    <state x="218" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1601478586981" />
     <state x="218" y="174" key="Vcs.Push.Dialog.v2/0.23.1440.822@0.23.1440.822" timestamp="1600103099070" />
   </component>
 </project>

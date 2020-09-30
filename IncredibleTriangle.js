@@ -39,7 +39,7 @@ alert("colorPalette created");
 
 //boat info
 var theta = 0.0;
-var delttatheta = 0.0;
+var deltatheta = 0.0;
 var thetaLoc;
 var triangleOneON = true;
 
@@ -97,10 +97,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 == 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1);
         }
         else {
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
         }
         //move vertices
         y2 = y2 - 12;
@@ -121,10 +121,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 == 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1),1);
         }
         else{
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
         }
         //move vertices
         y2 = y2 - 12;
@@ -145,10 +145,10 @@ window.onload = function init() {
         //create synthetic images in loop
         //alternates color in the sky
         if (i % 2 != 1){
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(241/255, 90/255, 3/255, 1), 1);
         }
         else{
-            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1));
+            mytriangle(vec2(x1,y1), vec2(x2,y2), vec2(x3,y3), vec4(255/255, 203/255, 5/255, 1), 1);
         }
         //move vertices
         x2 = x2 + 15;
@@ -156,12 +156,12 @@ window.onload = function init() {
     }
     //making sun
     //alert("beginning sun");
-    mytriangle(vec2(255,280), vec2(220,336), vec2(290,336), vec4(255/255, 236/255, 139/255, 1));
-    mytriangle(vec2(255,336), vec2(205,300), vec2(305,300), vec4(255/255, 236/255, 139/255, 1));
-    mytriangle(vec2(250,336), vec2(225,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1));
-    mytriangle(vec2(260,336), vec2(285,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1));
-    mytriangle(vec2(260,336), vec2(305,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1));
-    mytriangle(vec2(260,336), vec2(200,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1));
+    mytriangle(vec2(255,280), vec2(220,336), vec2(290,336), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(255,336), vec2(205,300), vec2(305,300), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(250,336), vec2(225,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(260,336), vec2(285,285), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(260,336), vec2(305,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
+    mytriangle(vec2(260,336), vec2(200,325), vec2(255,300), vec4(255/255, 236/255, 139/255, 1), 1);
     //alert("done with sun");
 
 
@@ -177,12 +177,12 @@ window.onload = function init() {
         blue1WaveLocX = generateRandomLoc(1);
         blue1WaveLocY = generateRandomLoc(0);
         //calls createWave function for blue1 waves
-        createWave(vec2(blue1WaveLocX,blue1WaveLocY), vec2(blue1WaveLocX+15,blue1WaveLocY-10), vec2(blue1WaveLocX+30,blue1WaveLocY), vec4(107/255, 185/255, 240/255, 1));
+        createWave(vec2(blue1WaveLocX,blue1WaveLocY), vec2(blue1WaveLocX+15,blue1WaveLocY-10), vec2(blue1WaveLocX+30,blue1WaveLocY), vec4(107/255, 185/255, 240/255, 1), 1);
         //calls generate location fnx
         blue2WaveLocX = generateRandomLoc(1);
         blue2WaveLocY = generateRandomLoc(0);
         //calls createWave function for blue2 waves
-        createWave(vec2(blue2WaveLocX,blue2WaveLocY), vec2(blue2WaveLocX+15,blue2WaveLocY-10), vec2(blue2WaveLocX+30,blue2WaveLocY), vec4(162/255, 208/255, 245/255, 1));
+        createWave(vec2(blue2WaveLocX,blue2WaveLocY), vec2(blue2WaveLocX+15,blue2WaveLocY-10), vec2(blue2WaveLocX+30,blue2WaveLocY), vec4(162/255, 208/255, 245/255, 1), 1);
     }
 
         var boatX;
@@ -194,15 +194,15 @@ window.onload = function init() {
         boatX = 410;
         boatY = 430;
 
-        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1));
-        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0));
-        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0));
+        makeBoat(vec2(boatX,boatY), vec2(boatX+50,boatY+25), vec2(boatX+100,boatY), vec4(113/255, 76/255, 61/255, 1), 1);
+        makeBoat(vec2(boatX+48,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY), vec4(0.0, 0.0, 0.0, 1.0), 1);
+        makeBoat(vec2(boatX+52,boatY), vec2(boatX+48,boatY-30), vec2(boatX+52,boatY-30), vec4(0.0, 0.0, 0.0, 1.0), 1);
         col = flagColor();
         if (col == 1) {
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0));
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(231 / 255, 116 / 255, 113 / 255, 1.0), 1);
         }
         else{
-            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0));
+            makeBoat(vec2(boatX + 52, boatY - 30), vec2(boatX + 52, boatY - 20), vec2(boatX + 80, boatY - 25), vec4(106/255,251/255,146/255, 1.0), 1);
         }
         //alert("synthetic image made");
 
@@ -334,7 +334,7 @@ function mytriangle(aa, bb, cc, cccc, triangType)
 }
 
 // function to create waves REFRESH TO WATCH MOVE AROUND
-function createWave(loc1, loc2, loc3, waveColor)
+function createWave(loc1, loc2, loc3, waveColor, triangType)
 {
     //alert("inside createWave fxn");
 
@@ -346,6 +346,10 @@ function createWave(loc1, loc2, loc3, waveColor)
     colorsArray.push(waveColor);
     colorsArray.push(waveColor);
     colorsArray.push(waveColor);
+
+    typesArray.push(triangType);
+    typesArray.push(triangType);
+    typesArray.push(triangType);
     return;
 }
 
@@ -401,7 +405,7 @@ function RLSkyTriangles(t1,t2,t3,t4,t5,t6){
 }
 */
 // function to make boat. REFRESH TO WATCH MOVE AROUND
-function makeBoat(x,y,z,w) {
+function makeBoat(x,y,z,w, triangType) {
 
     // focus on points to render
     pointsArray.push(coordscale(x));
@@ -411,6 +415,11 @@ function makeBoat(x,y,z,w) {
     colorsArray.push(w);
     colorsArray.push(w);
     colorsArray.push(w);
+
+    typesArray.push(triangType);
+    typesArray.push(triangType);
+    typesArray.push(triangType);
+
     return;
 }
 
